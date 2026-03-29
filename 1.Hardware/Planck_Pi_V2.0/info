@@ -1,0 +1,578 @@
+{
+  "uuid": "a5e3b24b52fb810c5cc3518c1be6cbf4",
+  "path": "Offline/Planck_Pi_V2.0",
+  "name": "Planck_Pi_V2.0",
+  "content": "",
+  "created_at": "2023-06-22 21:28:50",
+  "updated_at": "2026-01-29 21:12:00",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "b66ee3c936b5f1b8498a33a17730142d",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "26cf682387b44cd593af8b5ec57a7e49": 1,
+        "4b57ffb66597490186fdbe599f9f4581": 1,
+        "41edd43627ca41a28dd37469e5ada1ed": 1,
+        "f48cefafc8d24a6d8de9b2a4c0a1ee56": 1,
+        "8698f55d2b05489c9b6d911e7a0aaab0": 1,
+        "01f8feef49be43dcbfbe672254cb7b57": 32,
+        "f29f57ac58b24353a27984c5792bbc76": 32,
+        "28d0520718e542b39358162ea3b843d8": 3,
+        "41d6a8cb26b244f6992b3a1e9d012ccb": 1,
+        "57f2b9c28925407fa6e2542d71d2b9d7": 4,
+        "6107490819734af0acd77bc02316fe34": 1,
+        "18072cb179f341a09d056a8302acf6d0": 2,
+        "6f07b109594f40be9f815f19f315995a": 1,
+        "2a3055456e894f0dab4c9e8d78f05bdb": 1,
+        "74617d6888664a85a8162152d5d8862b": 1,
+        "e7a6b40da8b345328db85781682f5c54": 2,
+        "520b61874f0d49cc811833c5a7b143c2": 1,
+        "1e7976804e094962a48299d989de4a6a": 1,
+        "0d9ae5b817d8d8f74b607f6d6c53a96c": 1,
+        "fffb2d44dd744481935bfd5b34d16a49": 3
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "10u",
+          13,
+          "C0402",
+          "C5,C6,C8,C10,C12,C13,C15,C21,C22,C26,C30,C32,C36",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "0.1u",
+          12,
+          "C0402",
+          "C7,C9,C11,C16,C17,C18,C19,C20,C23,C27,C28,C31",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "20pF",
+          2,
+          "C0402",
+          "C24,C25",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1u",
+          4,
+          "C0402",
+          "C29,C34,C35,C37",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1uF",
+          1,
+          "C0402",
+          "C33",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "TF-012D",
+          1,
+          "TF-SMD_TF-012",
+          "CARD2",
+          {
+            "Manufacturer Part": "TF-012D",
+            "Manufacturer": "HANBO(汉博)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2874207"
+          }
+        ],
+        [
+          "1N5819WS",
+          1,
+          "SOD-323_L1.8-W1.3-LS2.5-RD",
+          "D1",
+          {
+            "Manufacturer Part": "1N5819WS",
+            "Manufacturer": "Hottech(合科泰)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C191023"
+          }
+        ],
+        [
+          "PZ254V-11-02P",
+          1,
+          "HDR-TH_2P-P2.54-V-M",
+          "H1",
+          {
+            "Manufacturer Part": "PZ254V-11-02P",
+            "Manufacturer": "XFCN(兴飞)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C492401"
+          }
+        ],
+        [
+          "X6511WV-18H-C30D60",
+          2,
+          "HDR-TH_18P-P2.54-V-M",
+          "H4,H5",
+          {
+            "Manufacturer Part": "X6511WV-18H-C60D30",
+            "Manufacturer": "XKB Connectivity(中国星坤)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C725950"
+          }
+        ],
+        [
+          "2.2uH",
+          3,
+          "IND-SMD_L2.5-W2.0-VLS252012CX-150M",
+          "L1,L2,L3",
+          {
+            "Manufacturer Part": "VLS252012CX-2R2M",
+            "Manufacturer": "TDK",
+            "Supplier": "LCSC",
+            "Supplier Part": "C307867"
+          }
+        ],
+        [
+          "XL-1005UGC_C2856703",
+          3,
+          "LED0402-RD_GREEN",
+          "LED1,LED2,LED3",
+          {
+            "Manufacturer Part": "XL-1005UGC",
+            "Manufacturer": "XINGLIGHT(成兴光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2856703"
+          }
+        ],
+        [
+          "GMI4527P-2C-62DB",
+          1,
+          "MIC-TH_BD4.5-P1.60-D0.40-L-FD",
+          "MIC1",
+          {
+            "Manufacturer Part": "GMI4527P-2C-62db",
+            "Manufacturer": "INGHAi(赢海)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C233340"
+          }
+        ],
+        [
+          "5.1k",
+          2,
+          "R0402",
+          "R1,R3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "10k",
+          7,
+          "R0402",
+          "R2,R4,R5,R6,R19,R21,R31",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "100k",
+          2,
+          "R0402",
+          "R7,R8",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "510k",
+          1,
+          "R0402",
+          "R9",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "110k",
+          1,
+          "R0402",
+          "R10",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "95k",
+          1,
+          "R0402",
+          "R11",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "30k",
+          1,
+          "R0402",
+          "R12",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "0R",
+          2,
+          "R0402",
+          "R13,R17",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "2k",
+          2,
+          "R0402",
+          "R14,R15",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1M",
+          1,
+          "R0402",
+          "R16",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "200k",
+          1,
+          "R0402",
+          "R18",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "47k",
+          2,
+          "R0402",
+          "R20,R23",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "22R",
+          1,
+          "R0402",
+          "R22",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1k",
+          4,
+          "R0402",
+          "R24,R25,R28,R33",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "150k",
+          2,
+          "R0402",
+          "R26,R27",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "15R",
+          1,
+          "R0402",
+          "R29",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "200R",
+          1,
+          "R0402",
+          "R32",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "TS342A2P-WZ",
+          2,
+          "SW-SMD_L4.0-W2.9-LS5.0",
+          "SW1,SW2",
+          {
+            "Manufacturer Part": "TS342A2P-WZ",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C557591"
+          }
+        ],
+        [
+          "TEST_DOT",
+          4,
+          "TEST_DOT",
+          "T1,T2,T3,T4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "F1C200S",
+          1,
+          "QFN-88_L10.0-W10.0-P0.40-BL-EP6.75",
+          "U1",
+          {
+            "Manufacturer Part": "F1C200S",
+            "Manufacturer": "Allwinner(全志)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2879851"
+          }
+        ],
+        [
+          "EA3036C",
+          1,
+          "WQFN-20_L3.0-W3.0-P0.40-BL-EP",
+          "U3",
+          {
+            "Manufacturer Part": "EA3036CQBR",
+            "Manufacturer": "everanalog(申风)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C570857"
+          }
+        ],
+        [
+          "XC6206P302MR_C2904833",
+          1,
+          "SOT-23-3L_L2.9-W1.6-P1.90-LS2.8-BL",
+          "U4",
+          {
+            "Manufacturer Part": "XC6206P302MR",
+            "Manufacturer": "YONGYUTAI(永裕泰)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2904833"
+          }
+        ],
+        [
+          "PAM8301AAF_C3001605",
+          1,
+          "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR",
+          "U5",
+          {
+            "Manufacturer Part": "PAM8301AAF",
+            "Manufacturer": "DIODES(美台)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C3001605"
+          }
+        ],
+        [
+          "TFT(160x80)",
+          1,
+          "TFT(160X80)",
+          "U6",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "CP2102N-A02-GQFN28R",
+          1,
+          "QFN-28_L5.0-W5.0-P0.50-TL-EP3.3",
+          "U7",
+          {
+            "Manufacturer Part": "CP2102N-A02-GQFN28R",
+            "Manufacturer": "SILICON LABS(芯科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C964632"
+          }
+        ],
+        [
+          "TYPEC-304-BCP16",
+          1,
+          "USB-C-SMD_TYPEC-304-BCP16",
+          "USB1",
+          {
+            "Manufacturer Part": "TYPEC-304-BCP16",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C720629"
+          }
+        ],
+        [
+          "10.0 QTJ6.3",
+          1,
+          "USB-A-SMD_10.0-QTJ6.3",
+          "USB3",
+          {
+            "Manufacturer Part": "10.0 QTJ6.3",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C404966"
+          }
+        ],
+        [
+          "24MHz",
+          1,
+          "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+          "X1",
+          {
+            "Manufacturer Part": "X322524MSB4SI",
+            "Manufacturer": "YXC(扬兴晶振)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C15643"
+          }
+        ]
+      ],
+      "updateTime": 1769692320,
+      "createTime": 1687440531,
+      "histories": [],
+      "created_at": "2023-06-22 21:28:51",
+      "updated_at": "2026-01-29 21:12:00"
+    },
+    {
+      "uuid": "c6a7961951e632a8665effe24b8604cb",
+      "puuid": "a5e3b24b52fb810c5cc3518c1be6cbf4",
+      "title": "PCB_Planck_Pi_V2.0",
+      "filename": "PCB_Planck_Pi_V2.0.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "0821ed6ea50c44f4909e4be7610e4198": 32,
+        "2758018da799434bbcefdf350bba497e": 2,
+        "1c3428779dbd4bef9f112097fb0f5721": 3,
+        "3e8ec947129348d38204cb81a1157ca9": 1,
+        "fafd024f554e426eb74cf4a204aa88b0": 32,
+        "f3d2a2ecf658447dac746eb15158a989": 1,
+        "795419fe08b4408b81518abedfb501c7": 1,
+        "e94c44da3885493b9509298adced264a": 1,
+        "1bae63611c9d45d6bec8bee5fb3ba0b2": 1,
+        "e6b180e1316a4d0690f78b72797504c2": 1,
+        "54b9ab7aebe5456bbc9f2879b8d360ff": 2,
+        "10bdc314718b4f9f8f4843fe40643517": 1,
+        "dd3cfd4941c4479cb7f2c598e6fde06c": 1,
+        "9e297fbdb6c24ee39419d7ac96617dbf": 1,
+        "74e7f23ce4964a7d960b61c2fa960fb5": 1,
+        "eea6534d03824fadb1228aab224ae0e0": 1,
+        "545db7199e0b40ba8dd5f2dd42424e04": 3,
+        "e2b600f5ba9047849a1861837c4a3d0e": 4,
+        "40c05886860b4c00b8eb336cb30bd326": 1,
+        "f604088b69b84166bf855f92092aa109": 1
+      },
+      "BOM": [],
+      "updateTime": 1769558099,
+      "createTime": 1687501747,
+      "histories": [],
+      "created_at": "2023-06-23 14:29:07",
+      "updated_at": "2026-01-28 07:54:59"
+    }
+  ],
+  "sort": [],
+  "title": "Planck_Pi_V2.0",
+  "foldername": "Planck_Pi_V2.0",
+  "schfilename": "Planck_Pi_V2.0.json",
+  "schfilemtime": 1769692320379
+}
