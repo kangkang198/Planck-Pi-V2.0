@@ -1,0 +1,5 @@
+点灯：
+echo 1 > /sys/class/leds/licheepi:blue:usr/brightness
+
+灭灯：
+echo 0 > /sys/class/leds/licheepi:blue:usr/brightness

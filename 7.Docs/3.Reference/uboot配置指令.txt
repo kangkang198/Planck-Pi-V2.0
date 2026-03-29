@@ -1,0 +1,12 @@
+setenv bootargs 'console=tty1 console=ttyS0,115200 panic=5 rootwait root=/dev/mmcblk0p2 rw'
+setenv bootargs 'console=ttyS0,115200 panic=5 console=tty1 rootwait root=/dev/mmcblk0p2 earlyprintk rw vt.global_cursor_default=0'
+setenv bootcmd 'load mmc 0:1 0x80008000 zImage; load mmc 0:1 0x80C00000 suniv-f1c100s-licheepi-nano.dtb; bootz 0x80008000 - 0x80C00000'
+saveenv
+
+#console=ttyS[,options] 使用特定的串口
+# mmcblk0p2
+# mmc TF卡
+# blk（block，块设备）
+# 0（第一个块设备，也就是第一张sd卡）
+# p（partition，分区）
+# 通过设置early_printk选项，可以在内核串口设备初始化之前，看到打印输出

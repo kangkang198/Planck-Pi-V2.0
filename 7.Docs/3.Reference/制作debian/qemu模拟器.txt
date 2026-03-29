@@ -1,0 +1,37 @@
+https://blog.csdn.net/benkaoya/article/details/129469529?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-129469529-blog-150571775.235%5Ev43%5Epc_blog_bottom_relevance_base5&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-129469529-blog-150571775.235%5Ev43%5Epc_blog_bottom_relevance_base5&utm_relevant_index=5
+https://blog.csdn.net/m0_74396439/article/details/146764491?spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-146764491-blog-150571775.235%5Ev43%5Epc_blog_bottom_relevance_base5&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-146764491-blog-150571775.235%5Ev43%5Epc_blog_bottom_relevance_base5&utm_relevant_index=10
+https://blog.csdn.net/weixin_45090728/article/details/124355432
+安装qemu-system-arm
+安装：
+sudo apt install qemu-system-arm
+
+查看版本号：
+qemu-system-arm --version
+
+可以使用以下命令查看 qemu 支持的 ARM 开发板，本文将选择vexpress-a9和vexpress-a15开发板进行模拟：
+qemu-system-arm -M help
+
+一个开发板往往支持不同cpu，查看某个开发板（以vexpress-a9为例）支持的cpu列表：
+qemu-system-arm -M vexpress-a9 --cpu help
+
+qemu-system-arm \
+	-M vexpress-a9 \
+ 	-m 512M \
+	-kernel ./linux-5.7.1/arch/arm/boot/zImage \
+	-dtb  ./linux-5.7.1/arch/arm/boot/dts/vexpress-v2p-ca9.dtb \
+    -nographic \
+    -append "init=/linuxrc root=/dev/mmcblk0 rw console=ttyAMA0" \
+    -sd ./rootfs/a9rootfs.ext3
+
+cd rootfs
+# 64M空间，空间不够也可以把它改大点
+sudo dd if=/dev/zero of=a9rootfs.ext4 bs=1M count=2048
+sudo mkfs.ext4 a9rootfs.ext4
+sudo mount -t ext4 a9rootfs.ext4 /mnt -o loop
+sudo cp -ra * /mnt
+sudo chown -R root.root /mnt/*
+sudo umount /mnt
+
+"nokaslr console=ttyAMA0 rootwait root=/dev/vda rw rootfstype=ext4 noinitrd"" \
+    -drive if=none,file=./debian-rootfs-ext4.img,id=hd0\
+    -device virtio-blk-device,drive=hd0

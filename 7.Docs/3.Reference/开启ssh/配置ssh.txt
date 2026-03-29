@@ -1,0 +1,30 @@
+1.把etc/ssh下的key补充完整
+
+2.
+sudo vim etc/ssh/sshd_config
+添加以下内容
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+sudo vim etc/network/interfaces
+添加下面内容
+allow-hotplug usb0
+auto usb0
+iface usb0 inet static
+address 192.168.137.2
+netmask 255.255.255.0
+gateway 192.168.137.1
+
+sudo vim etc/resolv.conf
+添加
+
+nameserver 127.0.0.1 改为 8.8.8.8 或者 114.114.114.114（DNS 域名服务器地址，由这个地址去解释百度地址）
+
+如果ping不通外网，就重新设置一下共享网络

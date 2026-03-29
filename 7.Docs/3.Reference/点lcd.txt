@@ -1,0 +1,16 @@
+cat /dev/urandom > /dev/fb0 
+
+启用Bootup logo‌
+Device Drivers → Graphics support → Bootup logo
+
+lcd作为终端，可以使用USB键盘敲指令：
+
+setenv bootargs 'console=tty1 console=ttyS0,115200 panic=5 rootwait root=/dev/mmcblk0p2 rw'
+saveenv
+
+打开开发板根文件系统中的/etc/inittab 文件，在里面加入下面这一行：
+tty1::askfirst:-/bin/sh
+
+我们可以通过下面这一行命令向
+LCD 屏幕输出“hello linux！”
+echo hello linux > /dev/tty1

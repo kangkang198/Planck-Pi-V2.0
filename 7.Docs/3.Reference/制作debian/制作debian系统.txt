@@ -1,0 +1,102 @@
+直接看这个：https://blog.csdn.net/a480694856/article/details/115328891
+https://blog.csdn.net/qq_41253675/article/details/124898690
+sudo apt install qemu-user-static -y
+
+sudo apt install debootstrap -y
+
+# 挂载到本地
+mkdir rootfs
+
+# 下载debian根文件系统
+
+sudo debootstrap --foreign --verbose --arch=armel buster rootfs http://mirrors.huaweicloud.com/debian-archive/debian/
+sudo debootstrap --foreign --verbose --arch=armel buster rootfs https://mirrors.huaweicloud.com/debian/
+
+cd rootfs
+sudo mount --bind /dev dev/
+sudo mount --bind /sys sys/
+sudo mount --bind /proc proc/
+sudo mount --bind /dev/pts dev/pts/
+cd ..
+sudo cp /usr/bin/qemu-arm-static rootfs/usr/bin/
+sudo chmod +x rootfs/usr/bin/qemu-arm-static
+sudo LC_ALL=C LANGUAGE=C LANG=C chroot rootfs /debootstrap/debootstrap --second-stage --verbose
+
+最初构建的文件系统密码是不知道的，如果直接挂载到板卡上也进不去，所以需要修改密码和添加必须的用户，我们可以使用 chroot 从开发端直接进入文件系统
+sudo LC_ALL=C LANGUAGE=C LANG=C chroot rootfs
+
+passwd root
+
+useradd -m planckpi
+usermod -s /bin/bash planckpi
+passwd planckpi
+
+#vi /etc/apt/sources.list
+nano /etc/apt/sources.list
+Ctrl+O保存，按下Enter，再按下Ctrl+X退出
+
+http://mirrors.huaweicloud.com/debian-archive/debian buster main
+
+apt-get update
+
+apt install sudo net-tools usbutils vim openssh-server
+
+sudo gedit rootfs/etc/ssh/sshd_config
+添加PermitRootLogin yes
+
+apt-cache clean #删除安装包 
+exit  #退出chroot
+sudo rm rootfs/usr/bin/qemu-arm-static
+
+cd rootfs
+sudo umount   dev/pts/
+sudo umount   dev/
+sudo umount   sys/
+sudo umount   proc/
+
+cd rootfs  #进到文件系统目录
+sudo tar cvf ../rootfs.tar .    #要注意那个.  代表当前目录
+生成的rootfs.tar任意解压到文件系统即可
+
+复制根文件系统到分区2：
+sudo mount /dev/sdb2 ~/mnt/
+sudo cp planck-pi/buildroot-2021.02.4/output/images/rootfs.tar ~/mnt/
+cd ~/mnt
+sudo tar -xf rootfs.tar
+sudo rm rootfs.tar
+
+
+芯片的SiP内存只有64MB，大部分情况下都不够用，所以需要开启swap使用内存卡的一部分空间来作为交换内存。
+
+通过free -m来查看下内存使用状况：
+
+# free -m
+              total        used        free      shared  buff/cache   available
+Mem:             54          15           6           0          31          34
+Swap:             0           0           0
+
+创建一个自定义的目录`/opt/images/`：
+
+mkdir /opt/images/
+rm -rf /opt/images/swap
+
+创建一个需要内存大小的文件，如512M：
+
+dd if=/dev/zero of=/opt/images/swap bs=1024 count=512000
+2048000+0 records in
+2048000+0 records out
+2097152000 bytes (2.1 GB, 2.0 GiB) copied, 30.3635 s, 69.1 MB/s
+
+把创建的文件变成SWAP分区并启用：
+
+mkswap /opt/images/swap
+swapon /opt/images/swap
+
+`free -m`看看SWAP是否生效，ok的话设置开机自动挂载swap：
+
+nano /etc/fstab
+
+添加一行：
+/opt/images/swap swap swap defaults 0 0
+
+

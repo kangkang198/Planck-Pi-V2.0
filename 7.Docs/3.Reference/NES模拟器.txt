@@ -1,0 +1,48 @@
+https://blog.csdn.net/qq_28877125/article/details/127311327
+https://download.csdn.net/blog/column/12158774/128758130
+https://www.cnblogs.com/twzy/p/15356127.html
+https://www.cnblogs.com/jonil/p/17648088.html
+https://github.com/nejidev/arm-NES-linux
+
+
+unsigned char r, g, b;
+r = ((color >> 10) & 0x1f);
+g = ((color >> 5) & 0x3f);
+b = (color & 0x1f);
+color = r<<11|g<<6|b;
+
+在debian系统安装
+apt-get install zlib1g-dev make gcc g++
+
+cd alsa-lib-1.2.5.1
+./configure
+make
+make install
+
+bin/aserver
+
+include/alsa
+include/asoundlib.h
+include/sys/asoundlib.h
+
+lib/libasound.la 
+libasound.so 
+libasound.so.2 
+libasound.so.2.0.0
+libatopology.la
+libatopology.so
+libatopology.so.2
+libatopology.so.2.0.0
+lib/pkgconfig/alsa-topology.pc
+alsa.pc
+
+share/aclocal/alsa.m4
+share/alsa/alsa.conf
+cards
+ctl
+pcm
+
+
+
+chmod 777 InfoNES
+./InfoNES SuperMario.nes

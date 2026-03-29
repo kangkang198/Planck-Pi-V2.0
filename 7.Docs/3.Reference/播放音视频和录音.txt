@@ -1,0 +1,57 @@
+参考博客：
+https://blog.csdn.net/qq_41709234/article/details/128694780
+https://blog.csdn.net/weixin_45881223/article/details/126186781
+
+vi /etc/asound.conf
+
+defaults.ctl.card 1
+defaults.pcm.card 1
+defaults.timer.card 1
+
+播放音频修改内核的文件有：
+/arch/arm/boot/dts/suniv-f1c100s.dtsi
+/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dts
+/arch/sound/soc/sunxi/sun4i-codec.c
+/arch/Documentation/devicetree/bindings/sound/sun4i-codec.txt
+/arch/drivers/dma/Kconfig b/drivers/dma/Kconfig
+/arch/drivers/dma/sun4i-dma.c
+/arch/Documentation/devicetree/bindings/dma/sun4i-dma.txt
+
+apt install mplayer
+apt install alsa-utils
+
+apt purge mplayer alsa-utils
+
+解除声卡静音：
+alsamixer
+
+systemctl status alsa-utils.service
+systemctl unmask alsa-utils.service
+systemctl start alsa-utils.service
+systemctl enable alsa-utils.service
+
+ffmpeg -i input.mp4 -vf "scale=160:80" output.mp4
+
+ffmpeg -i output.mp4 -r 15 output_15fps.mp4
+
+mplayer -vo fbdev2 output.mp4  #30fps会有延迟
+
+mplayer output.mp4 #没有延迟
+
+解决播放声音变快的问题
+
+修改drivers/clk/sunxi-ng/ccu-suniv-f1c100s.c 中 311行
+
+static SUNXI_CCU_GATE(codec_clk, "codec", "pll-audio", 0x140, BIT(31), 0);
+改为
+static SUNXI_CCU_GATE(codec_clk, "codec", "pll-audio", 0x140, BIT(31), CLK_SET_RATE_PARENT);
+
+
+# 关闭终端的光标，防止影响视频播放
+echo 0 > /sys/class/graphics/fbcon/cursor_blink
+
+
+H264硬件解码：
+https://whycan.com/t_5824.html
+https://whycan.com/t_5429.html
+

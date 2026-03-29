@@ -1,0 +1,32 @@
+芯片的SiP内存只有64MB，大部分情况下都不够用，所以需要开启swap使用内存卡的一部分空间来作为交换内存。
+
+通过free -m来查看下内存使用状况：
+
+# free -m
+              total        used        free      shared  buff/cache   available
+Mem:             54          15           6           0          31          34
+Swap:             0           0           0
+
+创建一个自定义的目录`/opt/images/`：
+
+mkdir /opt/images/
+rm -rf /opt/images/swap
+
+创建一个需要内存大小的文件，如512M：
+
+# dd if=/dev/zero of=/opt/images/swap bs=1024 count=512000
+2048000+0 records in
+2048000+0 records out
+2097152000 bytes (2.1 GB, 2.0 GiB) copied, 30.3635 s, 69.1 MB/s
+
+把创建的文件变成SWAP分区并启用：
+
+mkswap /opt/images/swap
+swapon /opt/images/swap
+
+`free -m`看看SWAP是否生效，ok的话设置开机自动挂载swap：
+
+nano /etc/fstab
+
+添加一行：
+/opt/images/swap swap swap defaults 0 0

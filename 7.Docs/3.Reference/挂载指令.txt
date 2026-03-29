@@ -1,0 +1,17 @@
+先卸载分区1和分区2：
+sudo umount /dev/sdb1 /dev/sdb2
+
+复制内核和设备树到分区1：
+sudo mount /dev/sdb1 ~/mnt/
+sudo cp planck-pi/linux/arch/arm/boot/zImage ~/mnt/
+sudo cp planck-pi/linux/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb ~/mnt/
+sudo umount /dev/sdb1 
+
+复制根文件系统到分区2：
+sudo mount /dev/sdb2 ~/mnt/
+sudo cp planck-pi/buildroot-2021.02.4/output/images/rootfs.tar ~/mnt/
+cd ~/mnt
+sudo tar -xf rootfs.tar
+sudo rm rootfs.tar
+
+sudo umount /dev/sdb2 
